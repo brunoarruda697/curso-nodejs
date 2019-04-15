@@ -1,12 +1,14 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res){
-    res.send('<html><body> Portal de noticia </html></body>');
-});
+app.set('view engine', 'ejs');
 
 app.get('/games', function(req, res){
-    res.send('<html><body> noticia sobre games </html></body>');
+    res.render('secao/games.ejs');
+});
+
+app.get('/', function(req, res){
+    res.send('<html><body>Portal de noticias</html></body>');
 });
 
 app.listen(3000, function(){
